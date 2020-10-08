@@ -19,6 +19,8 @@ bit7 = np.array( bitplane(1,im1) ) * 64
 bit6 = np.array( bitplane(2,im1 ) ) * 32
 bit5 = np.array( bitplane(3,im1) ) * 16
 
+bit4 = np.array( bitplane(4,im1) ) * 4
+
 combine = bit8 + bit7
 comb = np.reshape(combine,(row,col))
 cv2.imwrite("comb(8+7).jpeg",comb)
@@ -36,5 +38,8 @@ bit6 = np.reshape(bit6,(row,col))
 cv2.imwrite("6bit.jpg",bit6)
 bit5 = np.reshape(bit5,(row,col))
 cv2.imwrite("5bit.jpg",bit5)
+
+bit4 = np.reshape(bit4,(row,col))
+cv2.imwrite("4bit.jpg",bit4)
 
 cv2.destroyAllWindows()
